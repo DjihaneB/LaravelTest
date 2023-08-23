@@ -6,6 +6,17 @@ use Illuminate\Http\Request;
 
 class ComputerController extends Controller
 {
+    // Array of Static Data
+    private static function getData(){
+        return [
+            ['id' => 1, 'name' => 'LG', 'origin' => 'Koria'],
+            ['id' => 2, 'name' => 'HP', 'origin' => 'USA'],
+            ['id' => 3, 'name' => 'Lenovo', 'origin' => 'FR']
+        ];
+    }
+
+    // ______________________________
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +24,9 @@ class ComputerController extends Controller
      */
     public function index()
     {
-        return view('computers.index');
+        return view('computers.index', [ 
+            'computers' => self::getData()
+        ]);
     }                
 
     /**

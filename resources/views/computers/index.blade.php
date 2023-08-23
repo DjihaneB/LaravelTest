@@ -9,7 +9,15 @@
         <h1>Computers</>
     </div> 
     <div class="mt-6">
-        <p>This is the Computers page</p>
+        @if (count($computers) > 0)
+            <ul>
+                @foreach($computers as $computer)
+                    <li>{{ $computer ['name'] }} is frome <strong>{{$computer['origin']}}</strong></li> 
+                @endforeach
+            </ul>
+        @else
+            <p>There are no Computers to display</p>
+        @endif
     </div>                
 </div>
 
