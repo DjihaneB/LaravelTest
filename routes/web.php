@@ -14,20 +14,7 @@ use App\Http\Controllers\StaticController;
 |
 */
 
-Route::get('/', [StaticController::class, 'index']);
-
-Route::get('/about', [StaticController::class, 'about']);
-
-// Route::get('/stor', function(){
-//     $filter= request('style');
-//     if(isset($filter)){
-//         return '<h1>This page is viewing <span style= "color:red">'.strip_tags($filter).'</span></h1>';//strip_tags() est utilisée pour supprimer les balises HTML et PHP d'une chaîne de texte
-//     }else{
-//         return '<h1>This page is viewing <span style= "color:red">All prodect</span></h1>';
-
-//     }
-// });
-
-Route::get('/stor/{category?}/{item?}', [StaticController::class, 'category']);
-
-Route::get('/contact', [StaticController::class , 'contact'] );
+Route::get('/', [StaticController::class, 'index']) -> name('home.index');
+Route::get('/about/about', [StaticController::class, 'about']) -> name('home.about');
+// Route::get('/stor/{category?}/{item?}', [StaticController::class, 'category']);
+Route::get('/contact', [StaticController::class , 'contact'] ) -> name('home.contact');
