@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StaticController;
+use App\Http\Controllers\ComputerController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +17,7 @@ use App\Http\Controllers\StaticController;
 */
 
 Route::get('/', [StaticController::class, 'index']) -> name('home.index');
-Route::get('/about/about', [StaticController::class, 'about']) -> name('home.about');
+Route::get('/about', [StaticController::class, 'about']) -> name('home.about');
 // Route::get('/stor/{category?}/{item?}', [StaticController::class, 'category']);
 Route::get('/contact', [StaticController::class , 'contact'] ) -> name('home.contact');
+Route::resource('/computers', ComputerController::class);
