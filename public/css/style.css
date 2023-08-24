@@ -7,3 +7,15 @@ nav a {
     padding: .5rem
 }
 
+li {
+    list-style-type: none;  /* Remove bullets */
+    border: 1px solid;
+    border-radius:10px;
+    background: antiquewhite;
+    padding : 10px;
+    margin: 5px;
+}
+
+li:hover {
+    background:#f8b43c ;
+}

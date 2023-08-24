@@ -58,7 +58,16 @@ class ComputerController extends Controller
      */
     public function show($id)
     {
-        //
+        $computers = self::getData();
+
+        $index = array_search($id, array_column($computers, 'id'));
+            if($index === false){
+                abort(404);
+            }
+            return view('computers.show', [
+                'computer' => $computers[$index]
+            ]); 
+        
     }
 
     /**
