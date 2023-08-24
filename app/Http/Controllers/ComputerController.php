@@ -56,19 +56,7 @@ class ComputerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        $computers = self::getData();
-
-        $index = array_search($id, array_column($computers, 'id'));
-            if($index === false){
-                abort(404);
-            }
-            return view('computers.show', [
-                'computer' => $computers[$index]
-            ]); 
-        
-    }
+   
 
     /**
      * Show the form for editing the specified resource.
